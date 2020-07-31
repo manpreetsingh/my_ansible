@@ -1,0 +1,14 @@
+---
+- name: install apache and git
+  hosts: web
+  become: true
+  gather_facts: false
+  tasks:
+    - name: "Install Apache"
+      package: name=httpd state=present
+    - name: "Copy File"
+      copy: src=/Users/manpreet/PlayGround/Vagrant-Projects/ansible_nodes/index.html dest=/var/www/html/index.html  
+    - name: "Starting Apache"
+      service: name=httpd state=started  
+    - name: "Install GIT"
+      package: name=git state=present

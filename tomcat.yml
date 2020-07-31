@@ -1,0 +1,10 @@
+---
+- name: install tomcat and git
+  hosts: mix
+  become: true
+  gather_facts: false
+  tasks:
+    - name: "Install Tomcat"
+      package: name=tomcat state=absent
+    - name: "Install GIT"
+      package: name=git state=absent
