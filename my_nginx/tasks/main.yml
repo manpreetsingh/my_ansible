@@ -1,0 +1,6 @@
+---
+# tasks file for my_nginx
+ - name: Instaing NginX 
+   package: name=nginx state=present
+ - name: Staing NginX Service
+   service: name=nginx state=started  
